@@ -9,3 +9,9 @@ $('body').on('click', '.directions .item', (e) => {
         $(e.currentTarget).parent().next().slideDown().addClass('active');
     }
 });
+
+$("a[data-scroll]").click((e) => {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $('section[data-scroll="' + $(e.currentTarget).attr('data-scroll') + '"]').offset().top
+    }, 1500);
+});
